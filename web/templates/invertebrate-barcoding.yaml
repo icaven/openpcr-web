@@ -1,0 +1,24 @@
+pcr_program_name: Invertebrate barcoding
+pcr_program_description: (LCO1490/HC02198) barcoding protocol.
+cycles:
+- loops: 1
+  steps:
+  - name: Initial
+    temperature: 94
+    duration: 60
+- loops: 35
+  steps:
+  - name: Denature
+    temperature: 95
+    duration: 30
+  - name: Anneal
+    temperature: 50
+    duration: 30
+  - name: Extend
+    temperature: 72
+    duration: 45
+- loops: 1
+  steps:
+  - name: Hold
+    temperature: 20     # Don't lower this since device damage may occur
+    duration: 0

@@ -1,0 +1,30 @@
+pcr_program_name: Barcoding
+pcr_program_description: Standard 16S rRNA barcoding protocol.
+cycles:
+- loops: 1
+  steps:
+  - name: Hot start
+    temperature: 95.0
+    duration: 180
+- loops: 30
+  steps:
+  - name: Denature
+    temperature: 95.0
+    duration: 60
+  - name: Anneal
+    temperature: 55.0
+    duration: 60
+  - name: Extend
+    temperature: 72.0
+    duration: 120
+- loops: 1
+  steps:
+  - name: Final extend
+    temperature: 72.0
+    duration: 300
+- loops: 1
+  steps:
+  - name: Hold
+    temperature: 20.0
+    duration: 0
+lid_temperature: 110

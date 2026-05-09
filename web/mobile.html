@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <title>OpenPCR</title>
+  <link rel="stylesheet" href="/vendor/fonts/fonts.css" />
+  <style>
+    :root {
+      --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    }
+    html, body, #root {
+      margin: 0; padding: 0; width: 100%; height: 100%;
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overscroll-behavior: none;
+    }
+    * { box-sizing: border-box; }
+    button:focus-visible { outline: 2px solid oklch(0.62 0.16 260); outline-offset: 2px; }
+    input:focus-visible { outline: none; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: oklch(0.86 0.005 80); border-radius: 3px; }
+  </style>
+
+  <!-- React + Babel (local copies — run web/download_assets.py to populate vendor/) -->
+  <script src="/vendor/react.js"></script>
+  <script src="/vendor/react-dom.js"></script>
+  <script src="/vendor/babel.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Load components in dependency order -->
+  <script type="text/babel" src="data.jsx"></script>
+  <script type="text/babel" src="api.jsx"></script>
+  <script type="text/babel" src="editable-value.jsx"></script>
+  <script type="text/babel" src="app-mobile.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    ReactDOM.createRoot(document.getElementById("root")).render(
+      <window.PCRMobileApp tweaks={{ theme: "light", density: "compact", intensity: "medium", timeFormat: "hms", tempUnit: "C" }} />
+    );
+  </script>
+</body>
+</html>

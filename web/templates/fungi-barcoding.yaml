@@ -1,0 +1,24 @@
+pcr_program_name: Fungi barcoding
+pcr_program_description: (ITSIF/ITS4) barcoding protocol.
+cycles:
+- loops: 1
+  steps:
+  - name: Initial
+    temperature: 94
+    duration: 60
+- loops: 35
+  steps:
+  - name: Denature
+    temperature: 94
+    duration: 60
+  - name: Anneal
+    temperature: 55
+    duration: 60
+  - name: Extend
+    temperature: 72
+    duration: 120
+- loops: 1
+  steps:
+  - name: Hold
+    temperature: 20  # Don't lower this since device damage may occur
+    duration: 0

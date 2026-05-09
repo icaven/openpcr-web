@@ -1,0 +1,19 @@
+pcr_program_name: Colony PCR
+pcr_program_description: ''
+cycles:
+- loops: 1
+  steps:
+  - name: Init
+    temperature: 95
+    duration: 300
+- loops: 28
+  steps:
+  - name: Denature
+    temperature: 95
+    duration: 30
+  - name: Anneal
+    temperature: 52
+    duration: 30
+  - name: Extend
+    temperature: 72
+    duration: 90

@@ -1,0 +1,20 @@
+pcr_program_name: Amplification
+pcr_program_description: Quick 25-cycle amplification.
+cycles:
+- loops: 1
+  steps:
+  - name: Denature
+    temperature: 94.0
+    duration: 124
+- loops: 25
+  steps:
+  - name: Denature
+    temperature: 94.0
+    duration: 20
+  - name: Anneal
+    temperature: 58.0
+    duration: 20
+  - name: Extend
+    temperature: 72.0
+    duration: 45
+lid_temperature: 110

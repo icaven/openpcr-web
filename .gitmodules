@@ -1,0 +1,3 @@
+[submodule "openpycr"]
+	path = openpycr
+	url = git@github.com:icaven/OpenPyCR.git
