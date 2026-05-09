@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+dist/
+build/
+
+# Offline asset cache — populated by web/download_assets.py; not committed
+web/vendor/
+
+# Generated output from generate_qr_code.py
+openpcr_qr.svg
