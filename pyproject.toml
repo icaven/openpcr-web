@@ -6,3 +6,6 @@ dependencies = [
     "pyyaml",
     "segno",
 ]
+
+[tool.setuptools]
+packages = []
